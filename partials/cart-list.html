@@ -1,0 +1,17 @@
+<div id="equipmentListWrapper">
+	<p>Please click on buy button to buy the equipment.</p>
+	<ul class="list-unstyled">
+		<li class="equipment" ng-repeat="equipment in cart"
+			style="background: white url('imgs/{{equipment.imgUrl}}') no-repeat">
+			<div class="equipment-details clearfix">
+				<h3>{{equipment.name}}</h3>
+				<p>{{equipment.price | currency:'Rs.'}}</p>
+				<ul class="list-unstyled list-inline">
+					<li>Quanity: {{equipment.quanity}}</li>
+				</ul>
+				<p>{{equipment.details}}</p>
+				<button class="btn btn-info pull-right" ng-click="buy(equipment)">Buy</button>
+			</div>
+		</li>
+	</ul>
+</div>

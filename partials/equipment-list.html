@@ -1,0 +1,22 @@
+<div id="equipmentListWrapper">
+	<form role="form">
+	  <div class="form-group">
+		<input type="text" class="form-control" placeholder="Search here..." ng-model="searchStr">
+	  </div>
+	</form>
+	<div>
+	<ul class="list-unstyled">
+		<li class="equipment" ng-repeat="equipment in equipments | filter: searchStr"
+			style="background: white url(imgs/{{equipment.imgUrl}}) no-repeat">
+			<div class="equipment-details clearfix">
+				<h3>{{equipment.name}}</h3>
+				<p>{{equipment.price | currency:'Rs.'}}</p>
+				<ul class="list-unstyled list-inline">
+					<li>Quanity: {{equipment.quanity}}</li>
+				</ul>
+				<p>{{equipment.details}}</p>
+				<button class="btn btn-info pull-right" ng-click="addToCart(equipment)">Add to Cart</button>
+			</div>
+		</li>
+	</ul>
+</div>
