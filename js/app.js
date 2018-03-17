@@ -87,7 +87,7 @@ myApp.controller("HeaderCtrl", function($scope, $location) {
 		}
 		
 		return false;
-	}
+	};
 });
 
 
