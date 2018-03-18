@@ -17,6 +17,7 @@ myApp.config(function($routeProvider) {
 
 myApp.factory("cartService", function() {
 	var cart = [];
+	var total = 0;
 	
 	return {
 		getCart: function() {
@@ -26,7 +27,8 @@ myApp.factory("cartService", function() {
 			cart.push(equipment);
 		},
 		buy: function(equipment) {
-			alert("Thanks for buying: ", equipment.name);
+			total+=equipment.price;
+			alert("Thanks for buying, your total is $" + total);
 		}
 	};
 });
@@ -89,7 +91,6 @@ myApp.controller("HeaderCtrl", function($scope, $location) {
 		return false;
 	};
 });
-
 
 myApp.controller("EquipmentListCtrl", function($scope, equipmentService, cartService) {
 	$scope.equipments = equipmentService.getEquipments();
