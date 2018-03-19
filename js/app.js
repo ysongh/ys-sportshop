@@ -28,7 +28,8 @@ myApp.factory("cartService", function() {
 		},
 		buy: function(equipment) {
 			total+=equipment.price;
-			alert("Thanks for buying, your total is $" + total);
+			alert("Thanks for buying " + equipment.name + ", your total is $" + total);
+			cart.splice(equipment);
 		}
 	};
 });
